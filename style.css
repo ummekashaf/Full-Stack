@@ -1,0 +1,60 @@
+#div1{
+    
+    width:800px;
+    height:250px;
+    background-color:blue;
+    border-width: 10px 2px 2px 2px;
+    
+    padding:10px;
+}
+#div2{
+    width:800px;
+    height:250px;
+    background-color:blue;
+    border-width: 10px 2px 2px 2px;
+    
+    padding:10px;
+    
+}
+#details,th,td{
+    border:1px solid black;
+                
+    text-align:center;
+    width:800px;
+}
+a:hover{
+    background-color:transparent;
+    cursor: pointer;
+  }
+  body{
+      background-color:darkblue;
+  }
+  
+ 
+
+
+
+
+
+
+
+
+
+
+
+/* input{
+    width:200px;
+    height:50px;
+}
+table{
+    border:3px;
+}
+
+body{
+    background-color: rgb(22, 36, 170);
+    color:black;
+}
+#comment{
+    background-color: rgb(22, 36, 170);
+    color:black;
+} */

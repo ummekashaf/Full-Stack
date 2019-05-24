@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>kashaf</title>
+    </head>
+    <body>
+        <h2>JavaScript Object</h2>
+        <p>If you access an object method without (), it will return the function definition:</p>
+
+        <p id="kashaf1"></p>
+        <p id="kashaf2"></p>
+        <p id="kashaf3"></p>
+        <p id="kashaf4"></p>
+
+        <script>
+       
+        var person = {
+  firstName: "umme",
+  lastName : "kashaf",
+  id     : "uk",
+  fullName : function() {
+    return this.firstName + " " + this.lastName
+  },
+};
+document.getElementById("kashaf1").innerHTML = person.firstName ;
+document.getElementById("kashaf2").innerHTML = person.lastName;
+document.getElementById("kashaf3").innerHTML = person.id;
+document.getElementById("kashaf4").innerHTML = person.fullName();
+
+        </script>
+    </body>
+</html>

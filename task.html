@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>kashaf</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+        
+        </style>
+    </head>
+    <body>
+     
+        <center> <i onclick="like()" id="likes" class="fa fa-thumbs-o-up" style="font-size:100px">
+            <span></span></i></center>
+        <center> <i onclick="like()" id="dislikes" class="fa fa-thumbs-o-down" style="font-size:100px">
+                <span></span></i></center>
+            
+
+       <script>
+           
+      
+           var thumbsup = document.getElementById('likes');
+               thumbsup.innerHTML='1';
+               thumbsup.style.display='block';
+           var thumbsdown = document.getElementById('dislikes');
+               thumbsdown.innerHTML='0';
+               thumbsdown.style.display='none';
+            
+                function like(){
+                     var likees=thumbsup.style.display,
+                     var dislikees=thumbsdown.style.display;
+                     if(likees==block){
+                        thumbsup.innerHTML='1';
+                        thumbsup.style.display='none';
+                        thumbsdown.style.display='block';
+                     }   
+                     else{
+                        thumbsdown.innerHTML='0';
+                        thumbsup.style.display='block';
+                        thumbsdown.style.display='none'; 
+                     }
+                }
+       </script>     
+    </body>
+</html>

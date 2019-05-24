@@ -1,0 +1,30 @@
+#div1{
+    
+    width:800px;
+    height:250px;
+    background-color:rgb(141, 165, 175);
+    border-width: 10px 2px 2px 2px;
+    
+    padding:10px;
+}
+#div2{
+    width:800px;
+    height:250px;
+    background-color:rgb(141, 165, 175);
+    border-width: 10px 2px 2px 2px;
+    
+    padding:10px;
+    
+}
+#details,th,td{
+    border:1px solid black;
+                
+    text-align:center;
+    width:800px;
+}
+a:hover{
+    background-color:transparent;
+    cursor: pointer;
+  }
+  
+ 
