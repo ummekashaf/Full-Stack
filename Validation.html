@@ -1,0 +1,120 @@
+<html>
+    <head>
+        <title>kashaf</title>
+<style>
+#umme{
+    width:45%;
+    height:45%;
+    background-color:#00ff00;
+}
+#table,th,td{
+    border:2px solid black;         
+    text-align:center;
+    width:608px;
+}
+body{
+    background-color: #ff0000;
+;
+
+}
+</style>        
+    </head>
+    <body>
+        <form onsubmit="event.preventDefault();onFormSubmit();">
+            <div id="umme">
+                <br><br>    
+         <center><label>FIRST NAME:</label>&ensp;&ensp;&ensp;&ensp;
+          <input type="text" placeholder="Write your FirstName" id="fname" style="background-color: #00ff00"><br><br>
+          <label>LAST NAME:</label>&ensp;&ensp;&ensp;&ensp;
+          <input type="text" placeholder="Write your LastName" id="lname" style="background-color: #00ff00"><br><br>
+          <label>PASSWORD:</label>&ensp;&ensp;&ensp;&ensp;
+          <input type="password" placeholder="Write your Password" id="ps" style="background-color: #00ff00"><br><br>
+          <label>EMAILID:</label>&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+          <input type="email" placeholder="Write your EmailId" id="email" style="background-color: #00ff00"><br><br>
+          <button type="submit" onsubmit="submit()" style="background-color: #00ff00">Submit</button><br><br></center>
+            </div>
+            <div id="kashaf">
+                <table id="table">
+                    <thead>
+                        <tr style="background-color: blue">
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Password</th>
+                            <th>EmailId</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </form>
+        <script>
+        function submit(){
+            event.preventDefault();
+            var fname=document.getElementById('fname').value;
+            var lname=document.getElementById('lname').value;
+            var ps=document.getElementById('ps').value;
+            var email=document.getElementById('email').value;
+        }
+        var userData={
+            fname=fname,
+            lname=lname,
+            ps=ps,
+            email=email,
+        }
+        console.log("userdata",userData)
+
+        var selectedRow = null;
+        function onFormSubmit(){
+        var formData = readFormData();
+        if(selectedRow == null){
+        dataEntered(formData);
+           }
+        else{
+        updateData(formData);
+        }
+        resetForm();
+        }
+        function readFormData(){
+        var formData={}
+        formData["FirstName"] = document.getElementById("fname").value;
+        formData["LastName"] = document.getElementById("lname").value;
+        formData["Password"] =  document.getElementById('ps').value;
+        formData["EmailId"] = document.getElementById('email').value;
+        return formData;
+        }
+        function dataEntered(data){
+        var table = document.getElementById('table').getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(table.length);
+cell1 = newRow.insertCell(0);
+cell1.innerHTML = data.FirstName;
+cell1 = newRow.insertCell(1);
+cell1.innerHTML = data.LastName;
+cell2 = newRow.insertCell(2);
+cell2.innerHTML = data.Password;
+cell2 = newRow.insertCell(3);
+cell2.innerHTML = data.EmailId;
+}
+function resetForm(){
+document.getElementById('fname').value="";
+document.getElementById('lname').value="";
+document.getElementById('ps').value="";
+document.getElementById('email').value="";
+selectedRow = null;
+}
+function onEdit(td){
+selectedRow = td.parentElement.parentElement;
+document.getElementById('fname').value = selectedRow.cells[0].innerHTML;
+document.getElementById('lname').value = selectedRow.cells[1].innerHTML;
+document.getElementById('ps').value = selectedRow.cells[2].innerHTML;
+document.getElementById('email').value = selectedRow.cells[3].innerHTML;
+}
+function updateData(formData){
+selectedRow.cells[0].innerHTML = formData.fname;
+selectedRow.cells[1].innerHTML = formData.lname;
+selectedRow.cells[2].innerHTML = formData.ps;
+selectedRow.cells[3].innerHTML = formData.email;
+        </script>
+    </body>
+</html>
